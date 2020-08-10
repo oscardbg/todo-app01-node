@@ -4,13 +4,54 @@
 
 /*■■■■■■■■■■■■■■■■■■■■■■■■ Declarations */
 
-
+$red-1: #e63946;
+$blue-1: #1d3557;
+$blue-2: #00a8e8;
+$blue-3: #2ec4b6;
 
 /*■■■■■■■■■■■■■■■■■■■■■■■■ Core */
 
 body{background: #222; color: #fff; font-family: Ubuntu, sans-serif;}
+h1{font-size: 3rem; color: #fff; text-shadow: -3px 3px 2px #222; background: $red-1; font-weight: bold; text-align: center; padding: 30px 0;}
+a{
+    text-transform: uppercase; display: block; width: 200px; margin: 30px auto; padding: 15px 0; text-align: center; text-decoration: none; background: rgba($blue-3, 0.7); color: #000; font-weight: bold; border-radius: 5px;
+    &:hover{background: $blue-3;}
+}
 
-/*■■■■■■■■■■■■■■■■■■■■■■■■  */
+/*■■■■■■■■■■■■■■■■■■■■■■■■ Form New */
+
+.container{
+    
+    #frm-new{
+        margin: 0 auto; width: 600px;
+        input, button{border: none; outline: none; font-family: Ubuntu, sans-serif; padding: 10px 0; box-sizing: border-box; border: 1px solid $blue-2}
+        input{float: left; padding: 10px; border-radius: 5px 0 0 5px; width: 80%; border-right: none;}
+        button{
+            background: rgba($blue-2, 0.7); width: 20%; border-radius: 0 5px 5px 0;; cursor: pointer;
+            &:hover{background: $blue-2;}
+        }
+    }
+
+    .todos{
+        width: 800px; margin: 50px auto;
+
+        .todo{
+            border: 1px solid rgba($blue-3, 0.5); border-radius: 5px; margin-bottom: 5px; font-size: 1.2rem; padding: 10px;
+            &:after{content: ""; display: block; clear: both;}
+        }
+        li{float: left; padding: 10px 0;}
+
+        #frm-del{
+            float: right;
+        }
+
+        button{
+            font-family: Ubuntu, sans-serif; padding: 10px 15px; cursor: pointer; border: 1px solid rgba($blue-3, 0.5); background: #252525; color: $blue-2; border-radius: 5px; color: #fff; font-weight: bold;
+            &:hover{background: $blue-2; text-shadow: -1px 1px 0 #000;}
+        }
+    }
+}
+
 /*■■■■■■■■■■■■■■■■■■■■■■■■  */
 /*■■■■■■■■■■■■■■■■■■■■■■■■  */
 /*■■■■■■■■■■■■■■■■■■■■■■■■  */
