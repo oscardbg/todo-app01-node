@@ -15,8 +15,10 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use('/todos', todoRouter);
 
-app.get('/', (req, res) => {
-    res.render('index');
+app.get('/', async (req, res) => {
+    const todos = await Todo.find();
+
+    res.render('index', {todos});
 })
 
 app.listen(PORT, () => console.log('Listening on port: ' + PORT));

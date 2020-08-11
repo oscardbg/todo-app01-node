@@ -12,29 +12,27 @@
 
     <div class="container">
         <form action="/todos" method="POST" id="frm-new">
-            <input type="text" name="todo-txt" placeholder="Add a new task">
+            <input type="text" name="todoTxt" placeholder="Add a new task">
             <button type="submit">Add Task</button>
         </form>
 
         <ul class="todos">
-            <div class="todo">
+            
+            <!-- <div class="todo">
                 <li>Paint the front doors</li>
                 <form action="" id="frm-del">
                     <button>Delete</button>
                 </form>
-            </div>
-            <div class="todo">
-                <li>Paint the front doors</li>
-                <form action="" id="frm-del">
-                    <button>Delete</button>
-                </form>
-            </div>
-            <div class="todo">
-                <li>Paint the front doors</li>
-                <form action="" id="frm-del">
-                    <button>Delete</button>
-                </form>
-            </div>
+            </div> -->
+
+            <% todos.forEach(todo => { %>
+                <div class="todo">
+                    <li><%= todo.task %> <%= todo.createdAt.toLocaleDateString() %> </li>
+                    <form action="" id="frm-del">
+                        <button>Delete</button>
+                    </form>
+                </div>
+            <%}) %>
         </ul>
     </div>
 </body>
