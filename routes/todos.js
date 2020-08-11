@@ -22,4 +22,9 @@ router.post('/', (req, res) => {
     }
 })
 
+router.delete('/:id', async (req, res) => {
+    await Todo.findByIdAndDelete(req.params.id);
+    res.redirect('/');
+})
+
 module.exports = router;

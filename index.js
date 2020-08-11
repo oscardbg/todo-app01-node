@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 
 const Todo = require('./models/todo');
 const todoRouter = require('./routes/todos');
@@ -8,6 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 
 mongoose.connect('mongodb://localhost/todosdb01', { useNewUrlParser: true,  useUnifiedTopology: true, useCreateIndex: true });
 

@@ -28,8 +28,8 @@
             <% todos.forEach(todo => { %>
                 <div class="todo">
                     <li><%= todo.task %> <%= todo.createdAt.toLocaleDateString() %> </li>
-                    <form action="" id="frm-del">
-                        <button>Delete</button>
+                    <form action="/todos/<%= todo.id %>?_method=DELETE" id="frm-del" method="POST">
+                        <button type="submit">Delete</button>
                     </form>
                 </div>
             <%}) %>
